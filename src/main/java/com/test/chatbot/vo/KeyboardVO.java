@@ -12,8 +12,6 @@ public class KeyboardVO {
         this.buttons = buttons;
     }
 
-
-
     public String getType() {
         return type;
     }
