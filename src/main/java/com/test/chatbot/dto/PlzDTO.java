@@ -1,7 +1,5 @@
 package com.test.chatbot.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-
 import java.util.Map;
 
 public class PlzDTO {
