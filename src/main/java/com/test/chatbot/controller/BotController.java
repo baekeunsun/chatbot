@@ -1,7 +1,12 @@
 package com.test.chatbot.controller;
 
+import com.test.chatbot.dto.NicknameDto;
 import com.test.chatbot.dto.PlzDTO;
+import com.test.chatbot.dto.ResponseDto;
+import com.test.chatbot.service.NicknameService;
 import com.test.chatbot.vo.KeyboardVO;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,7 +15,10 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@RequiredArgsConstructor
 public class BotController {
+
+    private final NicknameService nicknameService;
     @RequestMapping(value = "/keyboard", method = RequestMethod.GET)
     public KeyboardVO keyboard() {
 
@@ -45,5 +53,14 @@ public class BotController {
         System.out.println("plzDTO = " + plzDTO);
 
         return plzDTO;
+    }
+
+    /**
+     * 닉네임 등록
+     * */
+    @PostMapping("/nickname/register")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseDto nickname(@RequestBody NicknameDto nicknameDto) throws Exception {
+        return nicknameService.register(nicknameDto);
     }
 }
