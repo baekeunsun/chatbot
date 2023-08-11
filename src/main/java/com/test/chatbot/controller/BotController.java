@@ -4,7 +4,6 @@ import com.test.chatbot.dto.NicknameDto;
 import com.test.chatbot.dto.PlzDTO;
 import com.test.chatbot.dto.ResponseDto;
 import com.test.chatbot.service.NicknameService;
-import com.test.chatbot.vo.KeyboardVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -19,20 +18,6 @@ import java.util.Map;
 public class BotController {
 
     private final NicknameService nicknameService;
-    @RequestMapping(value = "/keyboard", method = RequestMethod.GET)
-    public KeyboardVO keyboard() {
-
-        KeyboardVO keyboard = new KeyboardVO
-                (new String[] {"챗봇이랑 대화하기", "공지사항 보기", "FAQ 보기", "1:1 문의하기"});
-
-        return keyboard;
-    }
-
-    @GetMapping("/ex/test")
-    @ResponseBody
-    public String getExamplePath() {
-        return "Get some example";
-    }
 
     @RequestMapping(value = "/plz", method = RequestMethod.POST, headers = "Accept=application/json")
     public PlzDTO icandoit(@RequestBody String plz) {

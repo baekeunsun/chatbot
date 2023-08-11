@@ -1,5 +1,5 @@
 package com.test.chatbot.repository;
-import com.test.chatbot.dto.Member;
+import com.test.chatbot.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

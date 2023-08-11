@@ -1,6 +1,6 @@
 package com.test.chatbot.service;
 
-import com.test.chatbot.dto.Member;
+import com.test.chatbot.entity.Member;
 import com.test.chatbot.dto.NicknameDto;
 import com.test.chatbot.dto.ResponseDto;
 import com.test.chatbot.repository.MemberRepository;

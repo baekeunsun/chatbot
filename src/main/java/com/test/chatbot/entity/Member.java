@@ -1,4 +1,4 @@
-package com.test.chatbot.dto;
+package com.test.chatbot.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
